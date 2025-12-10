@@ -49,7 +49,7 @@ class QSettings(BaseSettings):
     """
 
     mlflow: MLflowSettings = MLflowSettings()
-    provider_uri: str = "~/.qlib/qlib_data/cn_data"
+    provider_uri: str = "D://Code//qlib_data//cn_data"
 
     model_config = SettingsConfigDict(
         env_prefix="QLIB_",
@@ -286,7 +286,7 @@ MODE_CONF = {
 }
 
 HIGH_FREQ_CONFIG = {
-    "provider_uri": "~/.qlib/qlib_data/cn_data_1min",
+    "provider_uri": "D://Code//qlib_data//cn_data_1min",
     "dataset_cache": None,
     "expression_cache": "DiskExpressionCache",
     "region": REG_CN,

@@ -214,8 +214,8 @@ Also, users can install the latest dev version ``Qlib`` by the source code accor
 Here is an example to download the latest data.
 ```bash
 wget https://github.com/chenditc/investment_data/releases/latest/download/qlib_bin.tar.gz
-mkdir -p ~/.qlib/qlib_data/cn_data
-tar -zxvf qlib_bin.tar.gz -C ~/.qlib/qlib_data/cn_data --strip-components=1
+mkdir -p D://Code//qlib_data//cn_data
+tar -zxvf qlib_bin.tar.gz -C D://Code//qlib_data//cn_data --strip-components=1
 rm -f qlib_bin.tar.gz
 ```
 
@@ -229,10 +229,10 @@ Load and prepare data by running the following code:
 ### Get with module
   ```bash
   # get 1d data
-  python -m qlib.cli.data qlib_data --target_dir ~/.qlib/qlib_data/cn_data --region cn
+  python -m qlib.cli.data qlib_data --target_dir D://Code//qlib_data//cn_data --region cn
 
   # get 1min data
-  python -m qlib.cli.data qlib_data --target_dir ~/.qlib/qlib_data/cn_data_1min --region cn --interval 1min
+  python -m qlib.cli.data qlib_data --target_dir D://Code//qlib_data//cn_data_1min --region cn --interval 1min
 
   ```
 
@@ -240,10 +240,10 @@ Load and prepare data by running the following code:
 
   ```bash
   # get 1d data
-  python scripts/get_data.py qlib_data --target_dir ~/.qlib/qlib_data/cn_data --region cn
+  python scripts/get_data.py qlib_data --target_dir D://Code//qlib_data//cn_data --region cn
 
   # get 1min data
-  python scripts/get_data.py qlib_data --target_dir ~/.qlib/qlib_data/cn_data_1min --region cn --interval 1min
+  python scripts/get_data.py qlib_data --target_dir D://Code//qlib_data//cn_data_1min --region cn --interval 1min
 
   ```
 
@@ -282,11 +282,11 @@ We recommend users to prepare their own data if they have a high-quality dataset
 ### Checking the health of the data
   * We provide a script to check the health of the data, you can run the following commands to check whether the data is healthy or not.
     ```
-    python scripts/check_data_health.py check_data --qlib_dir ~/.qlib/qlib_data/cn_data
+    python scripts/check_data_health.py check_data --qlib_dir D://Code//qlib_data//cn_data
     ```
   * Of course, you can also add some parameters to adjust the test results, such as this.
     ```
-    python scripts/check_data_health.py check_data --qlib_dir ~/.qlib/qlib_data/cn_data --missing_data_num 30055 --large_step_threshold_volume 94485 --large_step_threshold_price 20
+    python scripts/check_data_health.py check_data --qlib_dir D://Code//qlib_data//cn_data --missing_data_num 30055 --large_step_threshold_volume 94485 --large_step_threshold_price 20
     ```
   * If you want more information about `check_data_health`, please refer to the [documentation](https://qlib.readthedocs.io/en/latest/component/data.html#checking-the-health-of-the-data).
 
@@ -299,7 +299,7 @@ We recommend users to prepare their own data if they have a high-quality dataset
   from qlib.constant import REG_CN
 
   # Initialization
-  mount_path = "~/.qlib/qlib_data/cn_data"  # target_dir
+  mount_path = "D://Code//qlib_data//cn_data"  # target_dir
   qlib.init(mount_path=mount_path, region=REG_CN)
 
   # Get stock data by Qlib
@@ -328,7 +328,7 @@ We recommend users to prepare their own data if they have a high-quality dataset
     ```
 3. At this point you are in the docker environment and can run the qlib scripts. An example:
     ```bash
-    >>> python scripts/get_data.py qlib_data --name qlib_data_simple --target_dir ~/.qlib/qlib_data/cn_data --interval 1d --region cn
+    >>> python scripts/get_data.py qlib_data --name qlib_data_simple --target_dir D://Code//qlib_data//cn_data --interval 1d --region cn
     >>> python qlib/cli/run.py examples/benchmarks/LightGBM/workflow_config_lightgbm_Alpha158.yaml
     ```
 4. Exit the container

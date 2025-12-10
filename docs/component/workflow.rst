@@ -36,7 +36,7 @@ Below is a typical config file of ``qrun``.
 .. code-block:: YAML
 
     qlib_init:
-        provider_uri: "~/.qlib/qlib_data/cn_data"
+        provider_uri: "D://Code//qlib_data//cn_data"
         region: cn
     market: &market csi300
     benchmark: &benchmark SH000300
@@ -173,7 +173,7 @@ At first, the configuration file needs to contain several basic parameters which
 
 .. code-block:: YAML
 
-    provider_uri: "~/.qlib/qlib_data/cn_data"
+    provider_uri: "D://Code//qlib_data//cn_data"
     region: cn
 
 The meaning of each field is as follows:

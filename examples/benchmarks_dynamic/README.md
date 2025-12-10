@@ -8,8 +8,8 @@ The table below shows the performances of different solutions on different forec
 Here is the [crowd sourced version of qlib data](data_collector/crowd_source/README.md): https://github.com/chenditc/investment_data/releases
 ```bash
 wget https://github.com/chenditc/investment_data/releases/latest/download/qlib_bin.tar.gz
-mkdir -p ~/.qlib/qlib_data/cn_data
-tar -zxvf qlib_bin.tar.gz -C ~/.qlib/qlib_data/cn_data --strip-components=2
+mkdir -p D://Code//qlib_data//cn_data
+tar -zxvf qlib_bin.tar.gz -C D://Code//qlib_data//cn_data --strip-components=2
 rm -f qlib_bin.tar.gz
 ```
 

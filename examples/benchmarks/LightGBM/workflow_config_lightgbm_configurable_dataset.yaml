@@ -1,5 +1,5 @@
 qlib_init:
-    provider_uri: "~/.qlib/qlib_data/cn_data"
+    provider_uri: "D://Code//qlib_data//cn_data"
     region: cn
 market: &market csi300
 benchmark: &benchmark SH000300
@@ -12,16 +12,16 @@ data_handler_config: &data_handler_config
         kwargs:
             config:
                 feature:
-                    - ["Resi($close, 15)/$close", "Std(Abs($close/Ref($close, 1)-1)*$volume, 5)/(Mean(Abs($close/Ref($close, 1)-1)*$volume, 5)+1e-12)", "Rsquare($close, 5)", "($high-$low)/$open", "Rsquare($close, 10)", "Corr($close, Log($volume+1), 5)", "Corr($close/Ref($close,1), Log($volume/Ref($volume, 1)+1), 5)", "Corr($close, Log($volume+1), 10)", "Rsquare($close, 20)", "Corr($close/Ref($close,1), Log($volume/Ref($volume, 1)+1), 60)", "Corr($close/Ref($close,1), Log($volume/Ref($volume, 1)+1), 10)", "Corr($close, Log($volume+1), 20)", "(Less($open, $close)-$low)/$open"]
-                    - ["RESI5", "WVMA5", "RSQR5", "KLEN", "RSQR10", "CORR5", "CORD5", "CORR10", "RSQR20", "CORD60", "CORD10", "CORR20", "KLOW"]
+                    - ["Resi($close, 15)/$close", "Std(Abs($close/Ref($close, 1)-1)*$volume, 5)/(Mean(Abs($close/Ref($close, 1)-1)*$volume, 5)+1e-12)", "Rsquare($close, 5)", "($high-$low)/$open", "Rsquare($close, 10)", "Corr($close, Log($volume+1), 5)", "Corr($close/Ref($close,1), Log($volume/Ref($volume, 1)+1), 5)", "Corr($close, Log($volume+1), 10)", "Rsquare($close, 20)", "Corr($close/Ref($close,1), Log($volume/Ref($volume, 1)+1), 60)", "Corr($close/Ref($close,1), Log($volume/Ref($volume, 1)+1), 10)", "Corr($close, Log($volume+1), 20)", "(Less($open, $close)-$low)/$open"]  # 原始表达式
+                    - ["RESI5", "WVMA5", "RSQR5", "KLEN", "RSQR10", "CORR5", "CORD5", "CORR10", "RSQR20", "CORD60", "CORD10", "CORR20", "KLOW"] # 对应字段名
                 label:
-                    - ["Ref($close, -2)/Ref($close, -1) - 1"]
-                    - ["LABEL0"]
+                    - ["Ref($close, -2)/Ref($close, -1) - 1"] # 预测未来2日相对1日的收益率
+                    - ["LABEL0"]                              # 对应字段名
             freq: day
 
     learn_processors:
-        - class: DropnaLabel
-        - class: CSZScoreNorm
+        - class: DropnaLabel            # 删除标签为 NaN 的样本
+        - class: CSZScoreNorm           # 对标签做截面 Z-Score 标准化
           kwargs:
             fields_group: label
 port_analysis_config: &port_analysis_config

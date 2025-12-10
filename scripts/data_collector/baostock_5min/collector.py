@@ -307,13 +307,13 @@ class Run(BaseRun):
         qlib_data_1d_dir cannot be None, normalize 5min needs to use 1d data;
 
             qlib_data_1d can be obtained like this:
-                $ python scripts/get_data.py qlib_data --target_dir ~/.qlib/qlib_data/cn_data --interval 1d --region cn --version v3
+                $ python scripts/get_data.py qlib_data --target_dir D://Code//qlib_data//cn_data --interval 1d --region cn --version v3
             or:
                 download 1d data, reference: https://github.com/microsoft/qlib/tree/main/scripts/data_collector/yahoo#1d-from-yahoo
 
         Examples
         ---------
-            $ python collector.py normalize_data --qlib_data_1d_dir ~/.qlib/qlib_data/cn_data --source_dir ~/.qlib/stock_data/source/hs300_5min_original --normalize_dir ~/.qlib/stock_data/source/hs300_5min_nor --region HS300 --interval 5min
+            $ python collector.py normalize_data --qlib_data_1d_dir D://Code//qlib_data//cn_data --source_dir ~/.qlib/stock_data/source/hs300_5min_original --normalize_dir ~/.qlib/stock_data/source/hs300_5min_nor --region HS300 --interval 5min
         """
         if qlib_data_1d_dir is None or not Path(qlib_data_1d_dir).expanduser().exists():
             raise ValueError(
