@@ -16,7 +16,7 @@ Download and prepare the Data: execute the following command to download stock d
 
     .. code-block:: bash
 
-        python scripts/get_data.py qlib_data --target_dir D://Code//qlib_data//cn_data --region cn
+        python scripts/get_data.py qlib_data --target_dir /root/qlib_data/cn_data --region cn
 
 Please refer to `Data Preparation <../component/data.html#data-preparation>`_ for more information about `get_data.py`,
 
@@ -28,7 +28,7 @@ Initialize Qlib before calling other APIs: run following code in python.
         import qlib
         # region in [REG_CN, REG_US]
         from qlib.constant import REG_CN
-        provider_uri = "D://Code//qlib_data//cn_data"  # target_dir
+        provider_uri = "/root/qlib_data/cn_data"  # target_dir
         qlib.init(provider_uri=provider_uri, region=REG_CN)
 
 .. note::

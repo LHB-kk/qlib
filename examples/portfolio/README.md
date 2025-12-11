@@ -21,7 +21,7 @@ We use China stock market data for our example.
 
    ```bash
    wget https://github.com/SunsetWolf/qlib_dataset/releases/download/v0/csi300_weight.zip
-   unzip -d D://Code//qlib_data//cn_data csi300_weight.zip
+   unzip -d /root/qlib_data/cn_data csi300_weight.zip
    rm -f csi300_weight.zip
    ```
    NOTE:  We don't find any public free resource to get the weight in the benchmark. To run the example, we manually create this weight data.

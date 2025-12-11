@@ -1,5 +1,5 @@
 qlib_init:
-    provider_uri: "D://Code//qlib_data//cn_data_1min"
+    provider_uri: "/root/qlib_data/cn_data_1min"
     region: cn
 market: &market 'csi300'
 start_time: &start_time "2020-09-15 00:00:00"

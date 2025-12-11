@@ -20,7 +20,7 @@ class RollingDataWorkflow:
 
     def _init_qlib(self):
         """initialize qlib"""
-        provider_uri = "D://Code//qlib_data//cn_data"  # target_dir
+        provider_uri = "/root/qlib_data/cn_data"  # target_dir
         GetData().qlib_data(target_dir=provider_uri, region=REG_CN, exists_skip=True)
         qlib.init(provider_uri=provider_uri, region=REG_CN)
 

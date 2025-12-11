@@ -4,7 +4,7 @@
 
   - get data: `python scripts/get_data.py qlib_data`
   - parameters:
-    - `target_dir`: save dir, by default *D://Code//qlib_data//cn_data_5min*
+    - `target_dir`: save dir, by default */root/qlib_data/cn_data_5min*
     - `version`: dataset version, value from [`v2`], by default `v2`
       - `v2` end date is *2022-12*
     - `interval`: `5min`
@@ -52,12 +52,12 @@
             if interval==5min, qlib_data_1d_dir cannot be None, normalize 5min needs to use 1d data;
             ```
                 # qlib_data_1d can be obtained like this:
-                python scripts/get_data.py qlib_data --target_dir D://Code//qlib_data//cn_data --interval 1d --region cn --version v3
+                python scripts/get_data.py qlib_data --target_dir /root/qlib_data/cn_data --interval 1d --region cn --version v3
             ```
       - examples:
         ```bash
         # normalize 5min cn
-        python collector.py normalize_data --qlib_data_1d_dir D://Code//qlib_data//cn_data --source_dir ~/.qlib/stock_data/source/hs300_5min_original --normalize_dir ~/.qlib/stock_data/source/hs300_5min_nor --region HS300 --interval 5min
+        python collector.py normalize_data --qlib_data_1d_dir /root/qlib_data/cn_data --source_dir ~/.qlib/stock_data/source/hs300_5min_original --normalize_dir ~/.qlib/stock_data/source/hs300_5min_nor --region HS300 --interval 5min
         ```
   3. dump data: `python scripts/dump_bin.py dump_all`
     

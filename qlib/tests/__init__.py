@@ -15,9 +15,9 @@ from qlib.data.storage import CalendarStorage, InstrumentStorage, FeatureStorage
 
 class TestAutoData(unittest.TestCase):
     _setup_kwargs = {}
-    provider_uri = "D://Code//qlib_data//cn_data_simple"  # target_dir
-    provider_uri_1day = "D://Code//qlib_data//cn_data"  # target_dir
-    provider_uri_1min = "D://Code//qlib_data//cn_data_1min"
+    provider_uri = "/root/qlib_data/cn_data_simple"  # target_dir
+    provider_uri_1day = "/root/qlib_data/cn_data"  # target_dir
+    provider_uri_1min = "/root/qlib_data/cn_data_1min"
 
     @classmethod
     def setUpClass(cls, enable_1d_type="simple", enable_1min=False) -> None:

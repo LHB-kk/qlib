@@ -24,7 +24,7 @@ If users followed steps in `initialization <initialization.html>`_ and downloade
 .. code-block:: python
 
     >> import qlib
-    >> qlib.init(provider_uri='D://Code//qlib_data//cn_data')
+    >> qlib.init(provider_uri='/root/qlib_data/cn_data')
 
 
 Load trading calendar with given time range and frequency:

@@ -659,10 +659,10 @@ def get_instruments(
     Examples
     -------
         # parse instruments
-        $ python collector.py --index_name CSI300 --qlib_dir D://Code//qlib_data//cn_data --method parse_instruments
+        $ python collector.py --index_name CSI300 --qlib_dir /root/qlib_data/cn_data --method parse_instruments
 
         # parse new companies
-        $ python collector.py --index_name CSI300 --qlib_dir D://Code//qlib_data//cn_data --method save_new_companies
+        $ python collector.py --index_name CSI300 --qlib_dir /root/qlib_data/cn_data --method save_new_companies
 
     """
     _cur_module = importlib.import_module("data_collector.{}.collector".format(market_index))

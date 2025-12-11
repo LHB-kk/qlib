@@ -16,10 +16,10 @@
 
 ```bash
 # daily data
-python get_data.py qlib_data --target_dir D://Code//qlib_data//cn_data --region cn
+python get_data.py qlib_data --target_dir /root/qlib_data/cn_data --region cn
 
 # 1min  data (Optional for running non-high-frequency strategies)
-python get_data.py qlib_data --target_dir D://Code//qlib_data//cn_data_1min --region cn --interval 1min
+python get_data.py qlib_data --target_dir /root/qlib_data/cn_data_1min --region cn --interval 1min
 ```
 
 ### Download US Data
@@ -32,7 +32,7 @@ python get_data.py qlib_data --target_dir ~/.qlib/qlib_data/us_data --region us
 ### Download CN Simple Data
 
 ```bash
-python get_data.py qlib_data --name qlib_data_simple --target_dir D://Code//qlib_data//cn_data --region cn
+python get_data.py qlib_data --name qlib_data_simple --target_dir /root/qlib_data/cn_data --region cn
 ```
 
 ### Help
@@ -64,7 +64,7 @@ qlib.init(provider_uri=provider_uri, region=REG_US)
 import qlib
 from qlib.constant import REG_CN
 
-provider_uri = "D://Code//qlib_data//cn_data"  # target_dir
+provider_uri = "/root/qlib_data/cn_data"  # target_dir
 qlib.init(provider_uri=provider_uri, region=REG_CN)
 ```
 
@@ -72,5 +72,5 @@ qlib.init(provider_uri=provider_uri, region=REG_CN)
 The is also a [crowd sourced version of qlib data](data_collector/crowd_source/README.md): https://github.com/chenditc/investment_data/releases
 ```bash
 wget https://github.com/chenditc/investment_data/releases/latest/download/qlib_bin.tar.gz
-tar -zxvf qlib_bin.tar.gz -C D://Code//qlib_data//cn_data --strip-components=2
+tar -zxvf qlib_bin.tar.gz -C /root/qlib_data/cn_data --strip-components=2
 ```

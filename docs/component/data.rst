@@ -63,7 +63,7 @@ Here are some discussions about the price adjusting of Qlib.
 .. code-block:: bash
 
     # download 1d
-    python scripts/get_data.py qlib_data --target_dir D://Code//qlib_data//cn_data --region cn
+    python scripts/get_data.py qlib_data --target_dir /root/qlib_data/cn_data --region cn
 
     # download 1min
     python scripts/get_data.py qlib_data --target_dir ~/.qlib/qlib_data/qlib_cn_1min --region cn --interval 1min
@@ -74,7 +74,7 @@ In addition to China-Stock data, ``Qlib`` also includes a US-Stock dataset, whic
 
     python scripts/get_data.py qlib_data --target_dir ~/.qlib/qlib_data/us_data --region us
 
-After running the above command, users can find china-stock and us-stock data in ``Qlib`` format in the ``D://Code//qlib_data//cn_data`` directory and ``~/.qlib/qlib_data/us_data`` directory respectively.
+After running the above command, users can find china-stock and us-stock data in ``Qlib`` format in the ``/root/qlib_data/cn_data`` directory and ``~/.qlib/qlib_data/us_data`` directory respectively.
 
 ``Qlib`` also provides the scripts in ``scripts/data_collector`` to help users crawl the latest data on the Internet and convert it to qlib format.
 
@@ -217,12 +217,12 @@ Checking the health of the data
     for daily data:
         .. code-block:: bash
 
-            python scripts/check_data_health.py check_data --qlib_dir D://Code//qlib_data//cn_data
+            python scripts/check_data_health.py check_data --qlib_dir /root/qlib_data/cn_data
 
     for 1min data:
         .. code-block:: bash
 
-            python scripts/check_data_health.py check_data --qlib_dir D://Code//qlib_data//cn_data_1min --freq 1min
+            python scripts/check_data_health.py check_data --qlib_dir /root/qlib_data/cn_data_1min --freq 1min
 
 - Of course, you can also add some parameters to adjust the test results.
 
@@ -241,12 +241,12 @@ Checking the health of the data
     for daily data:
         .. code-block:: bash
 
-            python scripts/check_data_health.py check_data --qlib_dir D://Code//qlib_data//cn_data --missing_data_num 30055 --large_step_threshold_volume 94485 --large_step_threshold_price 20
+            python scripts/check_data_health.py check_data --qlib_dir /root/qlib_data/cn_data --missing_data_num 30055 --large_step_threshold_volume 94485 --large_step_threshold_price 20
 
     for 1min data:
         .. code-block:: bash
 
-            python scripts/check_data_health.py check_data --qlib_dir D://Code//qlib_data//cn_data --freq 1min --missing_data_num 35806 --large_step_threshold_volume 3205452000000 --large_step_threshold_price 0.91
+            python scripts/check_data_health.py check_data --qlib_dir /root/qlib_data/cn_data --freq 1min --missing_data_num 35806 --large_step_threshold_volume 3205452000000 --large_step_threshold_price 0.91
 
 Stock Pool (Market)
 -------------------
@@ -276,12 +276,12 @@ The `trade unit` defines the unit number of stocks can be used in a trade, and t
 - If users use ``Qlib`` in china-stock mode, china-stock data is required. Users can use ``Qlib`` in china-stock mode according to the following steps:
     - Download china-stock in qlib format, please refer to section `Qlib Format Dataset <#qlib-format-dataset>`_.
     - Initialize ``Qlib`` in china-stock mode
-        Supposed that users download their Qlib format data in the directory ``D://Code//qlib_data//cn_data``. Users only need to initialize ``Qlib`` as follows.
+        Supposed that users download their Qlib format data in the directory ``/root/qlib_data/cn_data``. Users only need to initialize ``Qlib`` as follows.
 
         .. code-block:: python
 
             from qlib.constant import REG_CN
-            qlib.init(provider_uri='D://Code//qlib_data//cn_data', region=REG_CN)
+            qlib.init(provider_uri='/root/qlib_data/cn_data', region=REG_CN)
 
 
 - If users use ``Qlib`` in US-stock mode, US-stock data is required. ``Qlib`` also provides a script to download US-stock data. Users can use ``Qlib`` in US-stock mode according to the following steps:
